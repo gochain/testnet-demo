@@ -12,7 +12,7 @@ import (
 
 func main() {
 	ctx := context.Background()
-	url := "http://159.65.231.243:8545"
+	url := "http://138.68.1.11:8545"
 	numBlocks := 25
 	client, err := ethclient.Dial(url)
 	if err != nil {
