@@ -4,7 +4,7 @@ This will walk you through creating wallets and sending some transactions using 
 
 ## Setup
 
-* Need a recent version of node installed
+* Node 9.X installed.
 * Clone this repo: `git clone https://github.com/gochain-io/testnet-demo.git` then `cd testnet-demo`
 * Run `npm insall`
 
@@ -18,8 +18,7 @@ web3 = require('./init.js')
 account1 = web3.eth.accounts.create()
 # Save the address and privateKey you get back, could also make these on myetherwallet or other tools
 # Send us a message on telegram and we'll send you some GOC to use
-# Can recover an account with (ensure 0x in the beginning of privateKey)
-# account = web3.eth.accounts.privateKeyToAccount(privateKey)
+# Can recover an account with (ensure 0x in the beginning of privateKey): `account = web3.eth.accounts.privateKeyToAccount(privateKey)`
 
 # Make a second account to send tx to
 account2 = web3.eth.accounts.create()
