@@ -36,7 +36,7 @@ BOOM!
 
 ### Batch time
 
-Now let's send a bunc of txs at once. This will send from `account1` to `account2`.
+Now let's send a bunch of txs at once. This will send from `account1` to `account2`.
 
 ```sh
 batch = require('./batch.js')
