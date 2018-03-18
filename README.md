@@ -5,7 +5,8 @@ This will walk you through creating wallets and sending some transactions using 
 ## Setup
 
 * Need a recent version of node installed
-* Then run `npm insall`
+* Clone this repo: `git clone https://github.com/gochain-io/testnet-demo.git` then `cd testnet-demo`
+* Run `npm insall`
 
 ## Demo
 
