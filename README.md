@@ -23,11 +23,18 @@ account1 = web3.eth.accounts.create()
 # Make a second account to send tx to
 account2 = web3.eth.accounts.create()
 
-# Make and send a transaction - just copy and paste each line directly
-web3.eth.getTransactionCount(account1.address).then(function(response){console.log(response); account1.nonce = response;})
-tx = {to: account2.address, value: web3.utils.toWei('1', 'ether'), nonce: account1.nonce, gas: '2000000'}
-web3.eth.accounts.signTransaction(tx, account1.privateKey).then(function(response){ console.log(response); tx.signed = response; })
-web3.eth.sendSignedTransaction(tx.signed.rawTransaction).on('receipt', console.log).then(function(response){ console.log(response) }).catch(console.log)
+# Make and send a transaction - copy this whole block
+web3.eth.getTransactionCount(account1.address).then(function(response){
+  account1.nonce = response;
+  // #2
+  tx = {to: account2.address, value: web3.utils.toWei('1', 'ether'), nonce: account1.nonce, gas: '2000000'}
+  // #3
+  web3.eth.accounts.signTransaction(tx, account1.privateKey).then(function(response){
+    tx.signed = response;
+    // #4
+    web3.eth.sendSignedTransaction(tx.signed.rawTransaction).on('receipt', console.log).then(function(response){ console.log(response) }).catch(console.log)
+  })
+})
 
 # Now check the new balances
 web3.eth.getBalance(account1.address).then(function(response){console.log(web3.utils.fromWei(response, 'ether'))})
